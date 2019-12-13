@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 /**
@@ -8,12 +10,18 @@ public class p4 {
         System.out.print("Enter a noun: ");
         String sentence = new Scanner(System.in).nextLine();
         System.out.print("Enter a verb: ");
-        sentence = sentence + " " + new Scanner(System.in).nextLine();
+        sentence = getInputString(sentence);
         System.out.print("Enter an adjective: ");
-        sentence = sentence + " " +  new Scanner(System.in).nextLine();
+        sentence = getInputString(sentence);
         System.out.print("Enter an adverb: ");
-        sentence = sentence + " " +  new Scanner(System.in).nextLine();
+        sentence = getInputString(sentence);
 
         System.out.println(sentence);
+    }
+
+    @NotNull
+    private static String getInputString(String sentence) {
+        sentence = sentence + " " + new Scanner(System.in).nextLine();
+        return sentence;
     }
 }
