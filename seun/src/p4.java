@@ -6,18 +6,14 @@ import java.util.Scanner;
 public class p4 {
     public static void main(String[] args) {
         System.out.print("Enter a noun: ");
-        String noun = getInput();
+        String sentence = new Scanner(System.in).nextLine();
         System.out.print("Enter a verb: ");
-        String verb = getInput();
+        sentence = sentence + " " + new Scanner(System.in).nextLine();
         System.out.print("Enter an adjective: ");
-        String adjective = getInput();
+        sentence = sentence + " " +  new Scanner(System.in).nextLine();
         System.out.print("Enter an adverb: ");
-        String adverb = getInput();
+        sentence = sentence + " " +  new Scanner(System.in).nextLine();
 
-        System.out.println(noun + verb + adjective + adverb);
-    }
-
-    private static String getInput() {
-        return new Scanner(System.in).nextLine();
+        System.out.println(sentence);
     }
 }
