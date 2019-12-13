@@ -7,20 +7,24 @@ import java.util.Scanner;
  */
 public class p4 {
     public static void main(String[] args) {
-        System.out.print("Enter a noun: ");
+        print("Enter a noun: ");
         String sentence = new Scanner(System.in).nextLine();
-        System.out.print("Enter a verb: ");
-        sentence = getInputString(sentence);
-        System.out.print("Enter an adjective: ");
-        sentence = getInputString(sentence);
-        System.out.print("Enter an adverb: ");
-        sentence = getInputString(sentence);
+        print("Enter a verb: ");
+        sentence = updateSentence(sentence);
+        print("Enter an adjective: ");
+        sentence = updateSentence(sentence);
+        print("Enter an adverb: ");
+        sentence = updateSentence(sentence);
 
         System.out.println(sentence);
     }
 
+    private static void print(String s) {
+        System.out.print(s);
+    }
+
     @NotNull
-    private static String getInputString(String sentence) {
+    private static String updateSentence(String sentence) {
         sentence = sentence + " " + new Scanner(System.in).nextLine();
         return sentence;
     }
