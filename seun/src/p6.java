@@ -1,15 +1,19 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Calendar;
-import java.util.Scanner;
 
 /**
  * Created by SangEun on 2019-12-13.
  */
 public class p6 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.print("What is your current age? ");
-        String age = new Scanner(System.in).nextLine();
+        String age = br.readLine();
         System.out.print("At what age would you like to retire? ");
-        String retire = new Scanner(System.in).nextLine();
+        String retire = br.readLine();
 
         try {
             int leftYear = Integer.parseInt(retire) -Integer.parseInt(age);
