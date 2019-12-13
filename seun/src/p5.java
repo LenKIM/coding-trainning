@@ -1,15 +1,18 @@
-import java.util.Calendar;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created by SangEun on 2019-12-13.
  */
 public class p5 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.print("What is the first number? ");
-        String firstStr = new Scanner(System.in).nextLine();
+        String firstStr = br.readLine();
         System.out.print("What is the second number? ");
-        String secondStr = new Scanner(System.in).nextLine();
+        String secondStr = br.readLine();
 
         try {
             int firstNum = Integer.parseInt(firstStr);
