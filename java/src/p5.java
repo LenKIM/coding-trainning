@@ -1,22 +1,28 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class p5 {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("What is the first number?");
-        String firstNumber = br.readLine();
-        int i = Integer.parseInt(firstNumber);
-
+        while (!scanner.hasNextInt()){
+            scanner.next();
+            System.out.println("should input integer");
+        }
+        long first = scanner.nextLong();
         System.out.println("What is the second number?");
-        String secondNumber = br.readLine();
-        int j = Integer.parseInt(secondNumber);
-
-        System.out.println(i + " + " + j + " = " + i + j);
-        System.out.println(i + " - " + j + " = " + (i - j));
-        System.out.println(i + " * " + j + " = " + i * j);
-        System.out.println(i + " / " + j + " = " + i / j);
+        while (!scanner.hasNextInt()){
+            scanner.next();
+            System.out.println("should input integer");
+        }
+        long second = scanner.nextLong();
+        System.out.println(first + " + " + second + " = " + Math.addExact(first, second));
+        System.out.println(first + " - " + second + " = " + Math.subtractExact(first,second));
+        System.out.println(first + " * " + second + " = " + Math.multiplyExact(first, second));
+        System.out.println(first + " / " + second + " = " + Math.floorDiv(first, second));
     }
 }
