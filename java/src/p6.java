@@ -10,25 +10,27 @@ public class p6 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("What is your current age?");
-        while (!scanner.hasNextInt()){
+        while (!scanner.hasNextLong()){
             scanner.next();
-            System.out.println("confirm your input, It is only valid int");
+            System.out.println("confirm your input, It is only valid number");
         }
         long currentAge = scanner.nextLong();
 
         System.out.println("At what age would you like to retire?");
-        while (!scanner.hasNextInt()){
+        while (!scanner.hasNextLong()){
             scanner.next();
-            System.out.println("confirm your input, It is only valid int");
+            System.out.println("confirm your input, It is only valid number");
         }
         long retiringAge = scanner.nextLong();
-
+        if ( currentAge > retiringAge){
+            throw new RuntimeException("This person is already retired. You needs to check The number");
+        }
         long leftYears = retiringAge - currentAge;
         System.out.println("You have " + leftYears + "years left until you can retire.");
 
-        int year = LocalDate.now().getYear();
+        long currentYear = LocalDate.now().getYear();
 
-        System.out.println("It's " + year + ", so you can retire in " + Math.addExact(leftYears, year) + "." + "years left until you can retire.");
+        System.out.println("It's " + currentYear + ", so you can retire in " + Math.addExact(leftYears, currentYear) + "." + "years left until you can retire.");
 
     }
 }

@@ -11,13 +11,13 @@ public class p5 {
         System.out.println("What is the first number?");
         while (!scanner.hasNextInt()){
             scanner.next();
-            System.out.println("should input integer");
+            System.out.println("confirm your input, It is only valid number");
         }
         long first = scanner.nextLong();
         System.out.println("What is the second number?");
         while (!scanner.hasNextInt()){
             scanner.next();
-            System.out.println("should input integer");
+            System.out.println("confirm your input, It is only valid number");
         }
         long second = scanner.nextLong();
         System.out.println(first + " + " + second + " = " + Math.addExact(first, second));
