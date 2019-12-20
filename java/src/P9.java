@@ -24,9 +24,7 @@ public class P9 {
         long ceilingWidth = Math.multiplyExact(length, width);
 
         long div = Math.floorDiv(ceilingWidth, UNIT_LITER);
-        if (Math.floorMod(ceilingWidth, UNIT_LITER) > 0) {
-            div = div + 1;
-        }
-        System.out.println("You will need to purchase" + div + "liters of paint to cover" + ceilingWidth + "square meters.");
+        double ceil = Math.ceil(div);
+        System.out.println("You will need to purchase" + ceil + "liters of paint to cover" + ceilingWidth + "square meters.");
     }
 }
