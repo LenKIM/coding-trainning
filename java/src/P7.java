@@ -31,9 +31,7 @@ public class P7 {
 
         System.out.println("You entered dimensions of " + roomLength + " feet by " + width + "feet");
         long result = Math.multiplyExact(roomLength, width);
-        System.out.println("The area is\n" +
-                "\n" +
-                result + " square feet");
+        System.out.println("The area is " + result + " square feet");
         long multiplyExact = Math.multiplyExact(result, unit);
         System.out.println(multiplyExact + " square meters");
     }
