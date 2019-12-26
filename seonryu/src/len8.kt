@@ -8,11 +8,9 @@ fun main(args: Array<String>) {
     val people: BigDecimal = readLine().toString().toBigDecimal()
 
     println("How many pizzas do you have?")
-    BufferedReader(System.`in`.reader())
     val pizzas: BigDecimal = readLine().toString().toBigDecimal()
 
     println("How many pieces are in a pizza?")
-    BufferedReader(System.`in`.reader())
     val pieces: BigDecimal = readLine().toString().toBigDecimal()
 
     println("$people people with $pizzas pizzas")

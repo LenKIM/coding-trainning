@@ -1,6 +1,8 @@
 import java.io.BufferedReader
 import java.math.BigDecimal
 
+const val PER_LITER_COVERAGE = 9
+
 fun main(args: Array<String>) {
 
     BufferedReader(System.`in`.reader())
@@ -12,7 +14,7 @@ fun main(args: Array<String>) {
     val height: BigDecimal = readLine().toString().toBigDecimal()
 
     val area: BigDecimal = width*height
-    val needPaint: BigDecimal = area.divide(9.toBigDecimal(), 0, BigDecimal.ROUND_UP)
+    val needPaint: BigDecimal = area.divide(PER_LITER_COVERAGE.toBigDecimal(), 0, BigDecimal.ROUND_UP)
 
     println("You will need to purchase $needPaint liters of")
     println("paint to cover $area square meters.")

@@ -10,7 +10,6 @@ fun main(args: Array<String>) {
     val length: BigDecimal = readLine().toString().toBigDecimal()
 
     println("What is the width of the room in feet?")
-    BufferedReader(System.`in`.reader())
     val width: BigDecimal = readLine().toString().toBigDecimal()
     val area: BigDecimal = (length*width).setScale(4, BigDecimal.ROUND_HALF_UP)
     val meters: BigDecimal = (area / FEET_TO_METERS_CONSTANT.toBigDecimal()).setScale(3, BigDecimal.ROUND_HALF_UP)
