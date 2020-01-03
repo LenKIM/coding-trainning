@@ -45,7 +45,4 @@ private fun inputDouble(): Double {
     return sc.nextDouble()
 }
 
-class Item {
-    var price : Double = 0.0
-    var quantity : Int = 0
-}
+data class Item (var price : Double = 0.0, var quantity : Int = 0 )
