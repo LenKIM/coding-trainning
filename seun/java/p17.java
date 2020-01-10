@@ -25,7 +25,7 @@ public class p17 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("What is your weight? ");
-        int weight = ConvertUtil.parseStringToInt(br.readLine());
+        double weight = ConvertUtil.parseStringToDouble(br.readLine());
 
         System.out.print("What is your gender?(M/W) ");
         double ratio;
