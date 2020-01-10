@@ -18,6 +18,8 @@ public class P15 {
 
         if (Objects.equals(hiddenPassword.hashCode(), password.hashCode())) {
             System.out.println("Welcome");
+        } else {
+            System.out.println("That password is incorrect.");
         }
     }
 }
