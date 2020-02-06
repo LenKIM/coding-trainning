@@ -11,12 +11,21 @@ public class Util {
         return sc.nextLong();
     }
 
-    public static double promptDoubleData(String message, Scanner sc) {
+    static double promptDoubleData(String message, Scanner sc) {
         System.out.println(message);
         while (!sc.hasNextDouble()) {
             sc.next();
             System.out.println("Confirm your input");
         }
         return sc.nextDouble();
+    }
+
+    static String promptData(String message, Scanner sc) {
+        System.out.println(message);
+        while (!sc.hasNextLine()) {
+            sc.next();
+            System.out.println("Confirm your input");
+        }
+        return sc.nextLine();
     }
 }
