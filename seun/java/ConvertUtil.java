@@ -8,7 +8,7 @@ public class ConvertUtil {
         try {
             result = Integer.parseInt(number);
         } catch (NumberFormatException e) {
-            System.out.println("Format error. Please retry.");
+            System.out.println("Sorry. That's not a valid input.");
             System.exit(0);
         } catch (NullPointerException e) {
             System.out.println("You have to write answer. Please retry.");
