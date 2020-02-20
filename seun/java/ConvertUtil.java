@@ -21,6 +21,17 @@ public class ConvertUtil {
         return result;
     }
 
+    public static boolean isValidStringToInt(String number) {
+
+        try {
+            Integer.parseInt(number);
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
+    }
+
     public static double parseStringToDouble(String number) {
         double result = 0;
 
