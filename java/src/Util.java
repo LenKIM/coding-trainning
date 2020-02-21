@@ -28,4 +28,13 @@ public class Util {
         }
         return sc.nextLine();
     }
+
+    static String promptDataWithPattern(String message, Scanner sc, String pattern) {
+        System.out.println(message);
+        while (!sc.hasNext(pattern)) {
+            sc.next();
+            System.out.println("try to input valid");
+        }
+        return sc.next().toLowerCase();
+    }
 }
