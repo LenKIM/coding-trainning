@@ -1,0 +1,7 @@
+Ling,Mai,55900
+Johnson,Jim,56500
+Zarnecki,Sabrina,46000
+Jones,Chris,34500
+Jones,Aaron,14200
+Swift,Geoffrey,65000
+Xiong,Fong,51500
