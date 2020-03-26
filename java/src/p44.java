@@ -1,9 +1,13 @@
-import java.io.File;
-import java.io.FileWriter;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,8 +22,40 @@ import java.util.Scanner;
  * */
 public class p44 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
 
+        Scanner sc = new Scanner(System.in);
+        String s = "What is the product name? ";
+        String x = "Sorry that product was not found in our inventory.";
 
+        Path path = Paths.get("java/src/texture/p44.txt");
+        List<String> strings = Files.readAllLines(path);
+
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(String.join("", strings));
+        JSONObject a = (JSONObject) obj;
+        JSONArray productsArray = (JSONArray) a.get("products");
+
+        boolean isEnd = true;
+        int index = 0;
+        while (isEnd) {
+            String name = Util.promptData(s, sc);
+            for (int i = 0; i < productsArray.size(); i++) {
+                JSONObject o = (JSONObject) productsArray.get(i);
+                if(o.get("name").equals(name)) {
+                    isEnd = false;
+                    index = i;
+                }
+            }
+
+            if(isEnd) {
+                System.out.println(x);
+            }
+        }
+
+        JSONObject o = (JSONObject) productsArray.get(index);
+        System.out.println("Name: " + o.get("name"));
+        System.out.println("Price: $" + o.get("price"));
+        System.out.println("Quantity on hand: " + o.get("quantity"));
     }
 }
